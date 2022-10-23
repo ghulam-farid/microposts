@@ -2,7 +2,7 @@ import { ui } from "./ui";
 import { http } from "./http";
 
 // const url = "http://localhost:3000/posts";
-const url = "https://ghulam-farid.github.io/microposts";
+const url = "https://my-json-server.typicode.com/ghulam-farid/mock-json/posts";
 
 
 document.addEventListener("DOMContentLoaded", getPosts);

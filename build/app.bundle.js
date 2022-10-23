@@ -9508,7 +9508,7 @@ var _ui = __webpack_require__(334);
 var _http = __webpack_require__(335);
 
 // const url = "http://localhost:3000/posts";
-var url = "https://ghulam-farid.github.io/microposts";
+var url = "https://my-json-server.typicode.com/ghulam-farid/mock-json/posts";
 
 document.addEventListener("DOMContentLoaded", getPosts);
 
