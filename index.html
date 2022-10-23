@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MicroPosts | JS Web Pack & Babel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Tab Icon -->
+    <link rel="icon" href="./assets/img/MicroPosts.png" />
+    <!-- Bootswatch -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d1a98e8057.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom CSS -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar bg-dark">
+      <div class="container">
+        <div class="navbar-brand">
+          <img
+            src="./assets/img/MicroPosts.png"
+            alt="MicroPosts image"
+            width="40"
+          />
+          <a href="" class="navbar-brand text-primary">MicroPosts</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 post-content">
+          <div class="card mt-5">
+            <div class="card-body">
+              <h1 class="card-title">Say Something</h1>
+              <p class="card-text">What's going on your mind?</p>
+              <form>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="post-title"
+                    placeholder="Post Title"
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <textarea
+                    id="post-body"
+                    class="form-control"
+                    placeholder="Post Body"
+                  ></textarea>
+                </div>
+                <input type="hidden" id="post-id" value="">
+                <div class="d-grid gap-2 post-btn-group">
+                  <button class="btn btn-primary post-submit-btn">Post It</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="post-collection"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-primary mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center mt-3">
+              <small>
+                <img src="./assets/img/MicroPosts.png" alt="MicroPosts image" width="30">
+                &copy; 2022 MicroPosts. All Rights Reserved.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./build/app.bundle.js"></script>
+  </body>
+</html>
