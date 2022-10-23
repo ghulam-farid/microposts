@@ -58,12 +58,16 @@ class UI {
   }
   changeFormState(state) {
     if (state == "edit") {
-      this.post_submit_btn.textContent = "Update Post";
-      this.post_submit_btn.className = "btn btn-warning post-update-btn";
-      const cancel_btn = document.createElement("button");
-      cancel_btn.className = "btn btn-secondary post-cancel-btn";
-      cancel_btn.textContent = "Cancel";
-      this.post_btn_group.appendChild(cancel_btn);
+      if (!document.querySelector(".post-cancel-btn")) {
+        this.post_submit_btn.textContent = "Update Post";
+        this.post_submit_btn.className = "btn btn-warning post-update-btn";
+        const cancel_btn = document.createElement("button");
+        cancel_btn.className = "btn btn-secondary post-cancel-btn";
+        cancel_btn.textContent = "Cancel";
+        this.post_btn_group.appendChild(cancel_btn);
+      }else{
+         this.showAlert(`The post is already in edit mode.`, "alert-danger mt-1");
+      }
     } else {
       this.post_submit_btn.textContent = "Post It";
       this.post_submit_btn.className = "btn btn-primary post-submit-btn";
