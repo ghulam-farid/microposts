@@ -1,7 +1,9 @@
 import { ui } from "./ui";
 import { http } from "./http";
 
-const url = "http://localhost:3000/posts";
+// const url = "http://localhost:3000/posts";
+const url = "https://ghulam-farid.github.io/microposts";
+
 
 document.addEventListener("DOMContentLoaded", getPosts);
 
