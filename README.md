@@ -1,6 +1,7 @@
-# Babel Webpack Starter
+# Micro Posts
 
-A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+
+Micro Posts is a mini application. Its UI designed in bootstrap 5 and backend is developed in core JavaScript. The application JS standars(ES2015,2016 and 2017) are build using Webpack 5 and Babel to ensure the flexibility to multi platform. For RESTful API operation, I developed the HTTP library which will perform CRUD operations.
 
 ### Version
 1.1.0
@@ -22,6 +23,13 @@ To serve in the browser  - Runs webpack-dev-server
 $ npm start
 ```
 
+### JSON Server
+connect to json database
+
+```sh
+$ npm run json:server
+```
+
 ### Build
 Compile and build
 
@@ -33,8 +41,8 @@ $ npm run build
 
 ### Author
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Ghulam Farid
+(https://ghulam-farid.github.io/profile/)
 
 ### License
 
