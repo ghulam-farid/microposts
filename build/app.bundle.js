@@ -9507,6 +9507,8 @@ var _ui = __webpack_require__(334);
 
 var _http = __webpack_require__(335);
 
+var url = "http://localhost:3000/posts";
+
 document.addEventListener("DOMContentLoaded", getPosts);
 
 _ui.ui.post_submit_btn.addEventListener("click", submitPostHandler);
@@ -9518,7 +9520,7 @@ _ui.ui.post_btn_group.addEventListener("click", cancelEditPostHandler);
 _ui.ui.post_collection.addEventListener("click", deletePostHandler);
 
 function getPosts() {
-  _http.http.get("http://localhost:3000/posts").then(function (data) {
+  _http.http.get(url).then(function (data) {
     return _ui.ui.showPosts(data);
   }).catch(function (err) {
     return _ui.ui.showAlert(err, "alert-danger mt-1");
@@ -9532,7 +9534,7 @@ function submitPostHandler(e) {
       body: _ui.ui.post_body.value
     };
     if (_ui.ui.post_id.value == "") {
-      _http.http.post("http://localhost:3000/posts", post_data).then(function (data) {
+      _http.http.post(url, post_data).then(function (data) {
         getPosts();
         _ui.ui.clearFields();
         _ui.ui.showAlert("Post added successfully.", "alert-success mt-1");
@@ -9540,7 +9542,7 @@ function submitPostHandler(e) {
         return _ui.ui.showAlert(err, "alert-danger mt-1");
       });
     } else {
-      _http.http.put("http://localhost:3000/posts/" + _ui.ui.post_id.value, post_data).then(function (post_data) {
+      _http.http.put(url + "/" + _ui.ui.post_id.value, post_data).then(function (post_data) {
         getPosts();
         _ui.ui.changeFormState("add");
         _ui.ui.showAlert("Post updated successfully.", "alert-success mt-1");
@@ -9579,7 +9581,7 @@ function deletePostHandler(e) {
   if (e.target.parentElement.classList.contains("delete-post")) {
     var id = e.target.parentElement.dataset.post_id;
     if (confirm("Are you sure?")) {
-      _http.http.delete("http://localhost:3000/posts/" + id).then(function (data) {
+      _http.http.delete(url + "/" + id).then(function (data) {
         getPosts();
         _ui.ui.changeFormState("add");
         _ui.ui.showAlert("Post deleted successfully.", "alert-success mt-1");
@@ -9632,7 +9634,7 @@ var UI = function () {
     value: function showAlert(message, className) {
       var div = document.createElement("div");
       div.className = "alert " + className;
-      div.innerHTML = "<i class=\"fa-solid fa-circle-exclamation text-" + className.split('-')[1] + "\"></i> " + message;
+      div.innerHTML = "<i class=\"fa-solid fa-circle-exclamation text-" + className.split("-")[1] + "\"></i> " + message;
       this.post_content.insertBefore(div, this.post_collection);
       setTimeout(function () {
         document.querySelector(".alert").remove();
@@ -9672,10 +9674,10 @@ var UI = function () {
         cancel_btn.textContent = "Cancel";
         this.post_btn_group.appendChild(cancel_btn);
       } else {
-        this.post_submit_btn.textContent = 'Post It';
-        this.post_submit_btn.className = 'btn btn-primary post-submit-btn';
-        if (document.querySelector('.post-cancel-btn')) {
-          document.querySelector('.post-cancel-btn').remove();
+        this.post_submit_btn.textContent = "Post It";
+        this.post_submit_btn.className = "btn btn-primary post-submit-btn";
+        if (document.querySelector(".post-cancel-btn")) {
+          document.querySelector(".post-cancel-btn").remove();
         }
         this.clearFields();
         this.clearIdField();
@@ -9684,7 +9686,7 @@ var UI = function () {
   }, {
     key: "clearIdField",
     value: function clearIdField() {
-      this.post_id.value = '';
+      this.post_id.value = "";
     }
   }]);
 

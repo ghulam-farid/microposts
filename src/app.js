@@ -1,6 +1,8 @@
 import { ui } from "./ui";
 import { http } from "./http";
 
+const url = "http://localhost:3000/posts";
+
 document.addEventListener("DOMContentLoaded", getPosts);
 
 ui.post_submit_btn.addEventListener("click", submitPostHandler);
@@ -11,7 +13,6 @@ ui.post_btn_group.addEventListener("click", cancelEditPostHandler);
 
 ui.post_collection.addEventListener("click", deletePostHandler);
 
-const url = "http://localhost:3000/posts";
 
 
 function getPosts() {
