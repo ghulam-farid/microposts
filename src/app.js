@@ -11,9 +11,12 @@ ui.post_btn_group.addEventListener("click", cancelEditPostHandler);
 
 ui.post_collection.addEventListener("click", deletePostHandler);
 
+const url = "http://localhost:3000/posts";
+
+
 function getPosts() {
   http
-    .get("http://localhost:3000/posts")
+    .get(url)
     .then((data) => ui.showPosts(data))
     .catch((err) => ui.showAlert(err, "alert-danger mt-1"));
 }
@@ -26,7 +29,7 @@ function submitPostHandler(e) {
     };
     if (ui.post_id.value == "") {
       http
-        .post("http://localhost:3000/posts", post_data)
+        .post(url, post_data)
         .then((data) => {
           getPosts();
           ui.clearFields();
@@ -35,7 +38,7 @@ function submitPostHandler(e) {
         .catch((err) => ui.showAlert(err, "alert-danger mt-1"));
     } else {
       http
-        .put(`http://localhost:3000/posts/${ui.post_id.value}`, post_data)
+        .put(`${url}/${ui.post_id.value}`, post_data)
         .then((post_data) => {
           getPosts();
           ui.changeFormState("add");
@@ -77,7 +80,7 @@ function deletePostHandler(e) {
     const id = e.target.parentElement.dataset.post_id;
     if (confirm("Are you sure?")) {
       http
-        .delete(`http://localhost:3000/posts/${id}`)
+        .delete(`${url}/${id}`)
         .then((data) => {
           getPosts();
           ui.changeFormState("add");
