@@ -9507,7 +9507,8 @@ var _ui = __webpack_require__(334);
 
 var _http = __webpack_require__(335);
 
-var url = "http://localhost:3000/posts";
+// const url = "http://localhost:3000/posts";
+var url = "https://ghulam-farid.github.io/microposts";
 
 document.addEventListener("DOMContentLoaded", getPosts);
 
