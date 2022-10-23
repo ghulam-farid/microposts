@@ -2,7 +2,7 @@
   "posts": [
     {
       "title": "Micro Posts",
-      "body": "Micro Posts is a mini application. Its UI designed in bootstrap 5 and backend is developed in core JavaScript. The application is build using Webpack 5 and Babel to ensure the flexibility to multi platform. ",
+      "body": "Micro Posts is a mini application. Its UI designed in bootstrap 5 and backend is developed in core JavaScript. The application is build using Webpack 5 and Babel to ensure the flexibility to multi platform. For RESTful API operation, I developed the HTTP library which will perform CRUD operations.",
       "id": 1
     },
     {

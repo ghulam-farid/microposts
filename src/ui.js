@@ -18,7 +18,9 @@ class UI {
   showAlert(message, className) {
     const div = document.createElement("div");
     div.className = `alert ${className}`;
-    div.innerHTML = `<i class="fa-solid fa-circle-exclamation text-${className.split('-')[1]}"></i> ${message}`;
+    div.innerHTML = `<i class="fa-solid fa-circle-exclamation text-${
+      className.split("-")[1]
+    }"></i> ${message}`;
     this.post_content.insertBefore(div, this.post_collection);
     setTimeout(() => {
       document.querySelector(".alert").remove();
@@ -62,19 +64,19 @@ class UI {
       cancel_btn.className = "btn btn-secondary post-cancel-btn";
       cancel_btn.textContent = "Cancel";
       this.post_btn_group.appendChild(cancel_btn);
-    }else{
-      this.post_submit_btn.textContent = 'Post It';
-      this.post_submit_btn.className = 'btn btn-primary post-submit-btn';
-      if(document.querySelector('.post-cancel-btn')){
-         document.querySelector('.post-cancel-btn').remove();
+    } else {
+      this.post_submit_btn.textContent = "Post It";
+      this.post_submit_btn.className = "btn btn-primary post-submit-btn";
+      if (document.querySelector(".post-cancel-btn")) {
+        document.querySelector(".post-cancel-btn").remove();
       }
       this.clearFields();
       this.clearIdField();
-   }
+    }
   }
-   clearIdField() {
-      this.post_id.value = '';
-   }
+  clearIdField() {
+    this.post_id.value = "";
+  }
 }
 
 export const ui = new UI();
